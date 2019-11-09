@@ -1,104 +1,35 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
-
-# C extensions
-*.so
-
-# Distribution / packaging
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
-
-# PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
-*.manifest
-*.spec
-
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
-
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-.hypothesis/
-.pytest_cache/
-
-# Translations
-*.mo
-*.pot
-
-# Django stuff:
-*.log
-local_settings.py
-db.sqlite3
-
-# Flask stuff:
-instance/
-.webassets-cache
-
-# Scrapy stuff:
-.scrapy
-
-# Sphinx documentation
-docs/_build/
-
-# PyBuilder
-target/
-
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# pyenv
-.python-version
-
-# celery beat schedule file
-celerybeat-schedule
-
-# SageMath parsed files
-*.sage.py
-
-# Environments
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
-
-# Spyder project settings
-.spyderproject
-.spyproject
-
-# Rope project settings
-.ropeproject
-
-# mkdocs documentation
-/site
-
-# mypy
-.mypy_cache/
+#fait par ALBERT WEFE 18A179FS
+﻿from Agent import Agent
+from Agent import Agent
+class Guichetier(Agent):
+	# définition de la méthode spéciale __init__
+  def __init__(self,nom="",solde=0,prenom="",poste=""):
+	"""Initialisation du compte avec la valeur soldeInitial."""
+      # assignation de l'attribut d'instance solde
+      Agent.__init__(self,nom)
+      self.solde = float(solde)
+ 	 # définition de la méthode NouveauSolde()
+   def NouveauSolde(self, montant):
+      """Nouveau solde de compte avec la valeur montant."""
+      self.solde = float(montant)
+	# définition de la méthode Solde()
+  def consultesolde (self):
+	"""Retourne le solde."""
+      return self.soldesolde
+  def retire (self,montant):
+	"""retire le compte de la valeur montant. Retourne le solde."""
+     self.solde -= montant
+     print("Nouveau solde : {:+.2f} €".format(self.solde))
+     return self.solde
+  def versement (self, montant):
+	"""versement le compte de la valeur montant. Retourne le solde."""
+     self.solde+=montant
+     print("Nouveau solde : {:+.2f} €".format(self.solde))
+     return self.solde
+  def virement (self,comptc):
+	"""le virement le compte de la valeur montant."""
+    self.retire(self,montant)
+    comptc.versement(self,montant)
+  def operation(self):
+      self.versement(self,montant)
+      self.retire(self,montant)
